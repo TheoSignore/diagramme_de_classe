@@ -1,0 +1,37 @@
+@startuml
+    class Moniteur {
+        <u> id </u>
+        nom
+        dateEmbauche
+    }
+    class Leçon {
+        <u> id </u>
+        dateLeçon
+        heureLeçon
+    }
+    class Voiture {
+        <u> id </u>
+        immatriculation
+        dateAchat
+        kilometrage
+    }
+    class Modele{
+        <u> id </u>
+        nom
+        cylindre
+        puissance
+    }
+    class Eleve {
+        <u> id </u>
+        nom
+        prenom
+        adresse
+        téléphone
+        dateNaissance
+        dateInscription
+    }
+Eleve "1..* prend"---"1..1\nprend"Leçon:prendre
+Leçon "1..1 utilise"---"1..*\nest utilisée"Voiture:utiliser
+Moniteur "1..* donnée"---"1..1\nest donné"Leçon:donner
+Voiture "1..1 appartient"---"1..*\ncontient"Modele:appartenir
+@enduml
